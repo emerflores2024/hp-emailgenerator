@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
+      <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+      <title>Email Generator App</title>
+      <link href="static/hp-logo-light.ico" rel="icon" media="(prefers-color-scheme: light)"/>
+      <link href="static/hp-logo-dark.ico" rel="icon" media="(prefers-color-scheme: dark)" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav class="z-depth-0">
+                <div style="width: 90%; margin: auto;" class="nav-wrapper">
+                <a href="/public/index.html" class="brand-logo navbar-container-logo">
+                    <img style="height: 40px;" src="static/hp-logo.png">
+                    <span style="padding-left: 20px;">Email Generator App</span>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="btn btn-flat modal-trigger" id="change_name" href="#modal1">Set my name</a></li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+          <main style="width: 90%; margin: auto; margin-top: 30px;">
+            <form id="form_details" class="row" autocomplete="off">
+                <div class="col s12 l3">
+                    <div class="row card-container">
+                        <h5 style="padding-bottom: 20px; padding-left: 10px;">Details</h5>
+                        <div class="input-field col s12 m6 l12">
+                            <select id="template_select" name="template_select">
+                              <option value="" disabled selected>Select a template</option>
+                              <option value="case_resolved">Case resolved</option>
+                              <option value="first_pca">First PCA Callback</option>
+                              <option value="second_pca">Second PCA Callback</option>
+                              <option value="final_pca">Final PCA Callback</option>
+                              <option value="lmi_link">LMI Link</option>
+                              <option value="order_created">Order created</option>
+                            </select>
+                            <label>Template</label>
+                        </div>
+                        <div class="input-field col s12 m6 l12">
+                            <input id="agent_name" type="text" required disabled>
+                            <label id="agent_name_label" for="agent_name">My name</label>
+                        </div>
+                        <div class="input-field col s12 m6 l12">
+                            <input id="customer_name" type="text" required>
+                            <label for="customer_name">Customer's name</label>
+                        </div>
+                        <div class="input-field col s12 m6 l12">
+                            <input id="case_number" type="text" title="Case number must be 10 digits" maxlength="10" pattern=".{10}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+                            <label for="case_number">Case number</label>
+                        </div>
+                        <div id="order_number_field" class="input-field col s12 m6 l12" hidden>
+                            <input id="order_number" type="text">
+                            <label for="order_number">Order number</label>
+                        </div>
+                        <div style="margin-top: 20px" class="col s12 m6 offset-m3 l12">
+                            <button type="submit" name="action" id="action_button" class="btn-flat custom-button">Generate
+                                <i class="material-icons right">arrow_forward</i>
+                            </button>
+                        </div>
+                          
+                    </div>
+                </div>
+                <div style="padding-left: 35px; " class="col s12 l9 email-template-container">
+                    <div class="row card-container">
+                        <div class="col s12">
+                            <a hidden id="reset-button" style="color: white; margin-top: 7px; padding: 7px 15px; background: #C62828; border-radius: 10px;" href="#" class="right"><i class="material-icons right">replay</i>Reset</a>
+                            <h5 style="padding-bottom: 10px;">Email template</h5>
+                            <div id="email-container">
+                                <p>Your template will show here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h5 style="margin-bottom:15px;" class="center">Set your name</h5>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="set_agent_name" type="text" required>
+                            <label for="set_agent_name">My name</label>
+                        </div>
+                        <div style="margin-top: 15px;" class="col s6 offset-s3">
+                            <a href="#" id="set-name-button" style="width: 100%;" class="btn-flat popup-button">Set my name</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </main>
+          <footer style="background: transparent; color: #858585" class="page-footer">
+              <div style="margin-bottom: 15px;" class="container center">Made with ♥ by Emerson and Mariano | HP 24/7 Pro Live Support</div>
+          </footer>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAlNJCST1qPNT3SIpezhk19raP9PyzWmUY",
+          authDomain: "hp-email-generator-8b693.firebaseapp.com",
+          projectId: "hp-email-generator-8b693",
+          storageBucket: "hp-email-generator-8b693.appspot.com",
+          messagingSenderId: "162789027759",
+          appId: "1:162789027759:web:e0590c7db47cf6b667495a",
+          measurementId: "G-STRXPSJ95T"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    </body>
+  </html>
