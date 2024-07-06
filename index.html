@@ -8,9 +8,9 @@
       <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
       <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
       <script type="text/javascript" src="js/main.js"></script>
-      <title>Email Generator App</title>
-      <link href="static/hp-logo-light.ico" rel="icon" media="(prefers-color-scheme: light)"/>
-      <link href="static/hp-logo-dark.ico" rel="icon" media="(prefers-color-scheme: dark)" />
+      <title>All-In Plan | Email templates</title>
+      <link href="static/hp-logo-light.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)"/>
+      <link href="static/hp-logo-dark.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" />
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -19,12 +19,12 @@
         <div class="navbar-fixed">
             <nav class="z-depth-0">
                 <div style="width: 90%; margin: auto;" class="nav-wrapper">
-                <a href="/public/index.html" class="brand-logo navbar-container-logo">
-                    <img style="height: 40px;" src="static/hp-logo.png">
-                    <span style="padding-left: 20px;">Email Generator App</span>
+                <a href="/index.html" class="brand-logo navbar-container-logo">
+                    <img style="height: 30px;" src="static/hp-logo.png">
+                    <span style="padding-left: 20px; font-size: 21px; color: #eeeeee">All-In Plan | Email templates</span>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="btn btn-flat modal-trigger" id="change_name" href="#modal1">Set my name</a></li>
+                    <li><a style="font-family: Quicksand, sans-serif; color: #eeeeee;" class="btn-small btn-flat modal-trigger" id="change_name" href="#modal1">Set my name</a></li>
                 </ul>
                 </div>
             </nav>
@@ -33,22 +33,19 @@
             <form id="form_details" class="row" autocomplete="off">
                 <div class="col s12 l3">
                     <div class="row card-container">
-                        <h5 style="padding-bottom: 20px; padding-left: 10px;">Details</h5>
+                        <h5 style="padding-bottom: 20px; padding-left: 10px; color: f5f5f5; font-size: 18px; color: #eeeeee">Details</h5>
                         <div class="input-field col s12 m6 l12">
-                            <select id="template_select" name="template_select">
-                              <option value="" disabled selected>Select a template</option>
-                              <option value="case_resolved">Case resolved</option>
-                              <option value="first_pca">First PCA Callback</option>
-                              <option value="second_pca">Second PCA Callback</option>
-                              <option value="final_pca">Final PCA Callback</option>
+                            <select style="color: #f5f5f5;" id="template_select" name="template_select">
+                              <option value="" disabled selected>-- Select a template --</option>
+                              <option value="replacement_confirmation">Replacement confirmation</option>
+                              <option value="ink_replenishment">Cartridges sent</option>
                               <option value="lmi_link">LMI Link</option>
-                              <option value="order_created">Order created</option>
+                              <option value="escalation_resolution">Escalation resolution</option>
+                              <option value="first_pca">First follow up</option>
+                              <option value="second_pca">Second follow up</option>
+                              <option value="final_pca">Final follow up | Case closure</option>
                             </select>
-                            <label>Template</label>
-                        </div>
-                        <div class="input-field col s12 m6 l12">
-                            <input id="agent_name" type="text" required disabled>
-                            <label id="agent_name_label" for="agent_name">My name</label>
+                            <label class="active">Template</label>
                         </div>
                         <div class="input-field col s12 m6 l12">
                             <input id="customer_name" type="text" required>
@@ -62,8 +59,12 @@
                             <input id="order_number" type="text">
                             <label for="order_number">Order number</label>
                         </div>
-                        <div style="margin-top: 20px" class="col s12 m6 offset-m3 l12">
-                            <button type="submit" name="action" id="action_button" class="btn-flat custom-button">Generate
+                        <div id="resolution_field" class="input-field col s12 m6 l12" hidden>
+                            <textarea id="escalation_resolution" class="materialize-textarea"></textarea>
+                            <label for="escalation_resolution">Resolution</label>
+                        </div>
+                        <div style="margin-top: 20px" class="col s12 m6 offset-m3">
+                            <button style="font-weight: normal;" type="submit" name="action" id="action_button" class="btn-flat custom-button">Generate
                                 <i class="material-icons right">arrow_forward</i>
                             </button>
                         </div>
@@ -74,9 +75,9 @@
                     <div class="row card-container">
                         <div class="col s12">
                             <a hidden id="reset-button" style="color: white; margin-top: 7px; padding: 7px 15px; background: #C62828; border-radius: 10px;" href="#" class="right"><i class="material-icons right">replay</i>Reset</a>
-                            <h5 style="padding-bottom: 10px;">Email template</h5>
+                            <h5 style="padding-bottom: 10px; color: #eeeeee; font-size: 18px;">Email template</h5>
                             <div id="email-container">
-                                <p>Your template will show here</p>
+                                <p style="color: #eeeeee; font-size: 14px;">Your template will show here</p>
                             </div>
                         </div>
                     </div>
@@ -86,21 +87,21 @@
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <h5 style="margin-bottom:15px;" class="center">Set your name</h5>
+                    <h5 style="margin-bottom:15px;" class="center">Let's set your name</h5>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="set_agent_name" type="text" required>
                             <label for="set_agent_name">My name</label>
                         </div>
-                        <div style="margin-top: 15px;" class="col s6 offset-s3">
-                            <a href="#" id="set-name-button" style="width: 100%;" class="btn-flat popup-button">Set my name</a>
+                        <div style="margin-top: 15px;" class="col s4 offset-s4">
+                            <a href="#" id="set-name-button" style="width: 100%; font-family: Quicksand, sans-serif; font-weight: normal;" class="btn-flat popup-button">Set my name</a>
                         </div>
                     </div>
                 </div>
             </div>
           </main>
           <footer style="background: transparent; color: #858585" class="page-footer">
-              <div style="margin-bottom: 15px;" class="container center">Made with ♥ by Emerson and Mariano | HP 24/7 Pro Live Support</div>
+              <div style="margin-bottom: 15px;" class="container center">v2.0 Developed by Emerson | HP 24/7 Pro Support</div>
           </footer>
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>

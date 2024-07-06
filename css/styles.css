@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: Quicksand;
+  src: url('fonts/Quicksand-Medium.ttf');
+}
+
+@font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
@@ -32,7 +37,7 @@
 }
 
 html{
-  font-family: Tilt Neon, sans-serif;
+  font-family: Quicksand, sans-serif;
 }
 
 body{
@@ -51,7 +56,7 @@ input.select-dropdown, .select-wrapper .caret{
 }
 
 nav{
-  background: #2D2D2D;
+  background: transparent;
 }
 
 .custom-button, .custom-button:focus{
@@ -62,6 +67,10 @@ nav{
   height: 50px;
   font-weight: bold;
   text-transform: none;
+}
+
+.custom-button{
+  font-family: Quicksand, sans-serif;
 }
 
 .popup-button{
@@ -83,38 +92,54 @@ nav{
 }
 
 .input-field input[type=text]:focus + label{
-  color: #00678a!important;
+  color: #e0e0e0!important;
 }
 
 .input-field input[type=text]{
-  color: #f5f5f5!important;
-  font-family: Tilt Neon;
+  color: #e0e0e0!important;
+  font-family: Quicksand;
+  font-size: 14px!important;
 }
 
-.input-field input[type=text]:disabled + label{
-  color: #9e9e9e!important;
-}
-
-.input-field input[type=text]:disabled{
-  border-bottom: 1px solid #9e9e9e;
+.input-field > label{
+  font-size: 14px!important;
 }
 
 .input-field input[type=text]:focus{
-  border-bottom: 1px solid #00678a!important;
-  box-shadow: 0 1px 0 0 #00678a!important;
+  border-bottom: 1px solid #e0e0e0!important;
+  box-shadow: 0 1px 0 0 #e0e0e0!important;
+  color: #f5f5f5!important;
+}
+
+.input-field textarea:focus + label{
+  color: #e0e0e0!important;
+}
+
+.input-field textarea{
+  color: #e0e0e0!important;
+  font-family: Quicksand;
+}
+
+
+.input-field textarea:focus{
+  border-bottom: 1px solid #e0e0e0!important;
+  box-shadow: 0 1px 0 0 #e0e0e0!important;
   color: #f5f5f5!important;
 }
 
 .dropdown-content{
   background: #313131;
+  border-radius: 10px;
+  padding: 7px 0px;
 }
 
 .select-dropdown li.disabled > span{
-  color: #f5f5f5;
+  color: #bdbdbd;
 }
 
 .dropdown-content li > span{
   color:#f5f5f5;
+  font-size: 14px;
 }
 
 .modal{
@@ -170,11 +195,11 @@ h5{
 }
 
 #change_name{
-  color: #fff;
+  color: #eeeeee     ;
   line-height: 39px!important;
-  font-size: 17px;
+  font-size: 14px;
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid #bdbdbd ;     
   height: 40px;
   border-radius: 10px;
   text-transform: none;
