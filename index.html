@@ -1,132 +1,252 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
-      <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
-      <script type="text/javascript" src="js/main.js"></script>
-      <title>All-In Plan | Email templates</title>
-      <link href="static/hp-logo-light.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)"/>
-      <link href="static/hp-logo-dark.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" />
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html>
 
-    <body>
-        <div class="navbar-fixed">
-            <nav class="z-depth-0">
-                <div style="width: 90%; margin: auto;" class="nav-wrapper">
+<head>
+    <!--Import Google Icon Font-->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
+    <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>All-In Plan | My Tools</title>
+    <link href="static/hp-logo-light.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)" />
+    <link href="static/hp-logo-dark.ico" rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="z-depth-0">
+            <div style="width: 90%; margin: auto;" class="nav-wrapper">
                 <a href="/index.html" class="brand-logo navbar-container-logo">
                     <img style="height: 30px;" src="static/hp-logo.png">
-                    <span style="padding-left: 20px; font-size: 21px; color: #eeeeee">All-In Plan | Email templates</span>
+                    <span style="padding-left: 20px; font-size: 21px; color: #eeeeee">All-In Plan | My Tools</span>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a style="font-family: Quicksand, sans-serif; color: #eeeeee;" class="btn-small btn-flat modal-trigger" id="change_name" href="#modal1">Set my name</a></li>
+                    <li><a style="font-family: Quicksand, sans-serif; color: #eeeeee;"
+                            class="btn-small btn-flat modal-trigger" id="change_name" href="#modal1">Set my name</a>
+                    </li>
                 </ul>
+            </div>
+        </nav>
+    </div>
+    <main style="width: 90%; margin: auto; margin-top: 30px;">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#test1">Notes</a></li>
+                    <li class="tab col s3"><a href="#test2">Email templates</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">
+                <div class="row">
+                    <div style="background-color: #1e1e1e;" class="col s12 m12 l5">
+                        <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Subject
+                            details</p>
+                        <form id="subject_form" name="subject_form"
+                            style="padding: 25px; margin-bottom: 40px;"
+                            class="col s12">
+                            <div class="input-field col s12">
+                                <select name="subject_reason" id="subject_reason" class="subjectInputsForm">
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option>Subscription / Order cancellation</option>
+                                    <option>Printer setup</option>
+                                    <option>Technical inquiries</option>
+                                    <option>Printer shipment / Order status</option>
+                                    <option>Replacement status</option>
+                                    <option>Account management</option>
+                                    <option>AIP general information</option>
+                                    <option>Place order</option>
+                                    <option>Ink replenishment</option>
+                                    <option>Fax setup</option>
+                                    <option>Return label request</option>
+                                    <option>Escalation</option>
+                                    <option>Non-AIP</option>
+                                </select>
+                                <label>Subject reason</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Notes details
+                    </p>
+                    <form id="notes_form" name="notes_form"
+                        style="border: 1px solid black; border-radius: 10px; padding: 25px;" class="col s12">
+                        <div class="input-field col s12">
+                            <textarea id="problem_description" name="problem_description"
+                                class="materialize-textarea notesInputsForm"></textarea>
+                            <label for="problem_description">Problem description</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="troubleshooting" name="troubleshooting"
+                                class="materialize-textarea notesInputsForm"></textarea>
+                            <label for="troubleshooting">Troubleshooting</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="resolution" name="resolution"
+                                class="materialize-textarea notesInputsForm"></textarea>
+                            <label for="resolution">Resolution</label>
+                        </div>
+                    </form>
                 </div>
-            </nav>
-        </div>
-          <main style="width: 90%; margin: auto; margin-top: 30px;">
-            <form id="form_details" class="row" autocomplete="off">
-                <div class="col s12 l3">
-                    <div class="row card-container">
-                        <h5 style="padding-bottom: 20px; padding-left: 10px; color: f5f5f5; font-size: 18px; color: #eeeeee">Details</h5>
-                        <div class="input-field col s12 m6 l12">
-                            <select style="color: #f5f5f5;" id="template_select" name="template_select">
-                              <option value="" disabled selected>-- Select a template --</option>
-                              <option value="replacement_confirmation">Replacement confirmation</option>
-                              <option value="ink_replenishment">Cartridges sent</option>
-                              <option value="lmi_link">LMI Link</option>
-                              <option value="escalation_resolution">Escalation resolution</option>
-                              <option value="first_pca">First follow up</option>
-                              <option value="second_pca">Second follow up</option>
-                              <option value="final_pca">Final follow up | Case closure</option>
-                            </select>
-                            <label class="active">Template</label>
-                        </div>
-                        <div class="input-field col s12 m6 l12">
-                            <input id="customer_name" type="text" required>
-                            <label for="customer_name">Customer's name</label>
-                        </div>
-                        <div class="input-field col s12 m6 l12">
-                            <input id="case_number" type="text" title="Case number must be 10 digits" maxlength="10" pattern=".{10}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
-                            <label for="case_number">Case number</label>
-                        </div>
-                        <div id="order_number_field" class="input-field col s12 m6 l12" hidden>
-                            <input id="order_number" type="text">
-                            <label for="order_number">Order number</label>
-                        </div>
-                        <div id="resolution_field" class="input-field col s12 m6 l12" hidden>
-                            <textarea id="escalation_resolution" class="materialize-textarea"></textarea>
-                            <label for="escalation_resolution">Resolution</label>
-                        </div>
-                        <div style="margin-top: 20px" class="col s12 m6 offset-m3">
-                            <button style="font-weight: normal;" type="submit" name="action" id="action_button" class="btn-flat custom-button">Generate
-                                <i class="material-icons right">arrow_forward</i>
-                            </button>
-                        </div>
-                          
+
+                <div class="col s12 m12 l7">
+                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
+                        <span>Subject</span>
+                        <a id="copysubjectbtn" class="btn-flat right copy-btn">
+                            <i class="material-icons right">content_copy</i>Copy
+                        </a>
+                    </p>
+                    <div id="subject" class="col s12"
+                        style="padding: 10px 15px; border: 1px solid black; border-radius: 10px; margin-bottom: 40px; height: 44.1px; color: black; font-size: 16px;">
+                        Your subject will display here...</div>
+
+                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
+                        <span>Notes</span>
+                        <a id="copynotesbtn" class="btn-flat right copy-btn">
+                            <i class="material-icons right">content_copy</i>Copy
+                        </a>
+                    </p>
+                    <div class="col s12"
+                        style="padding: 24px 0px 0px 0px; border: 1px solid black; border-radius: 10px;">
+                        <textarea
+                            style="border-bottom: none!important; padding: 0px 20px!important; margin: 0px!important;"
+                            id="notes" name="notes" class="materialize-textarea" readonly>
+                  {START CASE SUMMARY}
+                  |Problem Description:
+                  |Frequency of failure:
+                  |How to reproduce the failure:
+                  |Error message:
+                  |Windows Version:
+                  |BIOS Version:
+                  |Troubleshooting:
+                  |Resolution:
+                  |Leave blank:
+                  {END CASE SUMMARY}
+                            </textarea>
                     </div>
                 </div>
-                <div style="padding-left: 35px; " class="col s12 l9 email-template-container">
-                    <div class="row card-container">
-                        <div class="col s12">
-                            <a hidden id="reset-button" style="color: white; margin-top: 7px; padding: 7px 15px; background: #C62828; border-radius: 10px;" href="#" class="right"><i class="material-icons right">replay</i>Reset</a>
-                            <h5 style="padding-bottom: 10px; color: #eeeeee; font-size: 18px;">Email template</h5>
-                            <div id="email-container">
-                                <p style="color: #eeeeee; font-size: 14px;">Your template will show here</p>
+                <!-- FLOATING ACTION BUTTON -->
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large red darken-4 tooltipped clearbtn" data-position="left"
+                        data-tooltip="Reset all">
+                        <i class="large material-icons left">refresh</i>
+                    </a>
+                </div>
+            </div>
+            <div id="test2" class="col s12">
+                <form id="form_details" class="row" autocomplete="off">
+                    <div class="col s12 l3">
+                        <div class="row card-container">
+                            <h5
+                                style="padding-bottom: 20px; padding-left: 10px; color: f5f5f5; font-size: 18px; color: #eeeeee">
+                                Details</h5>
+                            <div class="input-field col s12 m6 l12">
+                                <select style="color: #f5f5f5;" id="template_select" name="template_select">
+                                    <option value="" disabled selected>-- Select a template --</option>
+                                    <option value="replacement_confirmation">Replacement confirmation</option>
+                                    <option value="ink_replenishment">Cartridges sent</option>
+                                    <option value="lmi_link">LMI Link</option>
+                                    <option value="escalation_resolution">Escalation resolution</option>
+                                    <option value="first_pca">First follow up</option>
+                                    <option value="second_pca">Second follow up</option>
+                                    <option value="final_pca">Final follow up | Case closure</option>
+                                </select>
+                                <label class="active">Template</label>
+                            </div>
+                            <div class="input-field col s12 m6 l12">
+                                <input id="customer_name" type="text" required>
+                                <label for="customer_name">Customer's name</label>
+                            </div>
+                            <div class="input-field col s12 m6 l12">
+                                <input id="case_number" type="text" title="Case number must be 10 digits" maxlength="10"
+                                    pattern=".{10}"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                    required>
+                                <label for="case_number">Case number</label>
+                            </div>
+                            <div id="order_number_field" class="input-field col s12 m6 l12" hidden>
+                                <input id="order_number" type="text">
+                                <label for="order_number">Order number</label>
+                            </div>
+                            <div id="resolution_field" class="input-field col s12 m6 l12" hidden>
+                                <textarea id="escalation_resolution" class="materialize-textarea"></textarea>
+                                <label for="escalation_resolution">Resolution</label>
+                            </div>
+                            <div style="margin-top: 20px" class="col s12 m6 offset-m3">
+                                <button style="font-weight: normal;" type="submit" name="action" id="action_button"
+                                    class="btn-flat custom-button">Generate
+                                    <i class="material-icons right">arrow_forward</i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div style="padding-left: 35px; " class="col s12 l9 email-template-container">
+                        <div class="row card-container">
+                            <div class="col s12">
+                                <a hidden id="reset-button"
+                                    style="color: white; margin-top: 7px; padding: 7px 15px; background: #C62828; border-radius: 10px;"
+                                    href="#" class="right"><i class="material-icons right">replay</i>Reset</a>
+                                <h5 style="padding-bottom: 10px; color: #eeeeee; font-size: 18px;">Email template</h5>
+                                <div id="email-container">
+                                    <p style="color: #eeeeee; font-size: 14px;">Your template will show here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h5 style="margin-bottom:15px;" class="center">Let's set your name</h5>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="set_agent_name" type="text" required>
+                                <label for="set_agent_name">My name</label>
+                            </div>
+                            <div style="margin-top: 15px;" class="col s4 offset-s4">
+                                <a href="#" id="set-name-button"
+                                    style="width: 100%; font-family: Quicksand, sans-serif; font-weight: normal;"
+                                    class="btn-flat popup-button">Set my name</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
-
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h5 style="margin-bottom:15px;" class="center">Let's set your name</h5>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="set_agent_name" type="text" required>
-                            <label for="set_agent_name">My name</label>
-                        </div>
-                        <div style="margin-top: 15px;" class="col s4 offset-s4">
-                            <a href="#" id="set-name-button" style="width: 100%; font-family: Quicksand, sans-serif; font-weight: normal;" class="btn-flat popup-button">Set my name</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-          </main>
-          <footer style="background: transparent; color: #858585" class="page-footer">
-              <div style="margin-bottom: 15px;" class="container center">v2.0 Developed by Emerson | HP 24/7 Pro Support</div>
-          </footer>
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="module">
+        </div>
+    </main>
+    <footer style="background: transparent; color: #858585" class="page-footer">
+        <div style="margin-bottom: 15px;" class="container center">v2.0 Developed by Emerson | HP 24/7 Pro Support</div>
+    </footer>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
-      
+
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-          apiKey: "AIzaSyAlNJCST1qPNT3SIpezhk19raP9PyzWmUY",
-          authDomain: "hp-email-generator-8b693.firebaseapp.com",
-          projectId: "hp-email-generator-8b693",
-          storageBucket: "hp-email-generator-8b693.appspot.com",
-          messagingSenderId: "162789027759",
-          appId: "1:162789027759:web:e0590c7db47cf6b667495a",
-          measurementId: "G-STRXPSJ95T"
+            apiKey: "AIzaSyAlNJCST1qPNT3SIpezhk19raP9PyzWmUY",
+            authDomain: "hp-email-generator-8b693.firebaseapp.com",
+            projectId: "hp-email-generator-8b693",
+            storageBucket: "hp-email-generator-8b693.appspot.com",
+            messagingSenderId: "162789027759",
+            appId: "1:162789027759:web:e0590c7db47cf6b667495a",
+            measurementId: "G-STRXPSJ95T"
         };
-      
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-      </script>
-    </body>
-  </html>
+    </script>
+</body>
+
+</html>
