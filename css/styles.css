@@ -165,7 +165,6 @@ nav{
 .card-container{
   background-color: #1E1E1E;
   border-radius: 15px;
-  padding: 12px 15px 30px 15px;
 }
 
 #toast-container{
@@ -207,10 +206,6 @@ h5{
 }
 
 @media only screen and (max-width: 992px){
-  .email-template-container{
-      padding-left: 10.5px!important; 
-  }
-
   nav .brand-logo{
       font-size: 22px;
       width: 100%;

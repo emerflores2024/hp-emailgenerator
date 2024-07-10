@@ -34,24 +34,23 @@
     </div>
     <main style="width: 90%; margin: auto; margin-top: 30px;">
         <div class="row">
-            <div class="col s12">
+            <div class="col s12" style="margin-bottom: 20px;">
                 <ul class="tabs">
                     <li class="tab col s3"><a href="#test1">Notes</a></li>
                     <li class="tab col s3"><a href="#test2">Email templates</a></li>
                 </ul>
             </div>
-            <div id="test1" class="col s12">
-                <div class="col s6">
-                    <div class="col s12">
+            <div id="test1" class="row">
+                <div class="col s12 l5">
                         <div style="background-color: #1e1e1e;" class="col s12">
-                            <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
-                                Subject
-                                details</p>
-                            <form id="subject_form" name="subject_form" style="padding: 25px; margin-bottom: 40px;"
+                            <form id="subject_form" name="subject_form" style="padding: 25px 0px; margin-bottom: 40px;"
                                 class="col s12">
+                                <p style="font-size: 20px; padding-bottom: 8px;font-weight: bold;">
+                                    Subject
+                                    details</p>
                                 <div class="input-field col s12">
                                     <select name="subject_reason" id="subject_reason" class="subjectInputsForm">
-                                        <option value="" disabled selected>Select an option...</option>
+                                        <option value="" disabled selected>-- Select an option --</option>
                                         <option>Subscription / Order cancellation</option>
                                         <option>Printer setup</option>
                                         <option>Technical inquiries</option>
@@ -66,11 +65,10 @@
                                         <option>Escalation</option>
                                         <option>Non-AIP</option>
                                     </select>
-                                    <label>Subject reason</label>
+                                    <label class="active">Subject reason</label>
                                 </div>
                             </form>
                         </div>
-                    </div>
 
                     <div class="col s12">
                         <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Notes
@@ -97,7 +95,7 @@
                     </div>
                 </div>
 
-                <div class="col s6">
+                <div class="col s12 l7">
                     <div class="col s12">
                         <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
                             <span>Subject</span>
@@ -146,10 +144,10 @@
                     </a>
                 </div>
             </div>
-            <div id="test2" class="col s12">
-                <form id="form_details" class="row" autocomplete="off">
+            <div id="test2" class="row">
+                <form class="row" id="form_details" autocomplete="off">
                     <div class="col s12 l3">
-                        <div class="row card-container">
+                        <div style="padding: 15px;" class="col s12 card-container">
                             <h5
                                 style="padding-bottom: 20px; padding-left: 10px; color: f5f5f5; font-size: 18px; color: #eeeeee">
                                 Details</h5>
@@ -194,9 +192,9 @@
 
                         </div>
                     </div>
-                    <div style="padding-left: 35px; " class="col s12 l9 email-template-container">
-                        <div class="row card-container">
-                            <div class="col s12">
+                    <div class="col s12 l9 email-template-container">
+                        <div class="card-container col s12">
+                            <div style="padding: 15px;">
                                 <a hidden id="reset-button"
                                     style="color: white; margin-top: 7px; padding: 7px 15px; background: #C62828; border-radius: 10px;"
                                     href="#" class="right"><i class="material-icons right">replay</i>Reset</a>
