@@ -41,93 +41,103 @@
                 </ul>
             </div>
             <div id="test1" class="col s12">
-                <div class="row">
-                    <div style="background-color: #1e1e1e;" class="col s12 m12 l5">
-                        <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Subject
-                            details</p>
-                        <form id="subject_form" name="subject_form"
-                            style="padding: 25px; margin-bottom: 40px;"
-                            class="col s12">
+                <div class="col s6">
+                    <div class="col s12">
+                        <div style="background-color: #1e1e1e;" class="col s12">
+                            <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
+                                Subject
+                                details</p>
+                            <form id="subject_form" name="subject_form" style="padding: 25px; margin-bottom: 40px;"
+                                class="col s12">
+                                <div class="input-field col s12">
+                                    <select name="subject_reason" id="subject_reason" class="subjectInputsForm">
+                                        <option value="" disabled selected>Select an option...</option>
+                                        <option>Subscription / Order cancellation</option>
+                                        <option>Printer setup</option>
+                                        <option>Technical inquiries</option>
+                                        <option>Printer shipment / Order status</option>
+                                        <option>Replacement status</option>
+                                        <option>Account management</option>
+                                        <option>AIP general information</option>
+                                        <option>Place order</option>
+                                        <option>Ink replenishment</option>
+                                        <option>Fax setup</option>
+                                        <option>Return label request</option>
+                                        <option>Escalation</option>
+                                        <option>Non-AIP</option>
+                                    </select>
+                                    <label>Subject reason</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col s12">
+                        <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Notes
+                            details
+                        </p>
+                        <form id="notes_form" name="notes_form"
+                            style="border: 1px solid black; border-radius: 10px; padding: 25px;" class="col s12">
                             <div class="input-field col s12">
-                                <select name="subject_reason" id="subject_reason" class="subjectInputsForm">
-                                    <option value="" disabled selected>Select an option...</option>
-                                    <option>Subscription / Order cancellation</option>
-                                    <option>Printer setup</option>
-                                    <option>Technical inquiries</option>
-                                    <option>Printer shipment / Order status</option>
-                                    <option>Replacement status</option>
-                                    <option>Account management</option>
-                                    <option>AIP general information</option>
-                                    <option>Place order</option>
-                                    <option>Ink replenishment</option>
-                                    <option>Fax setup</option>
-                                    <option>Return label request</option>
-                                    <option>Escalation</option>
-                                    <option>Non-AIP</option>
-                                </select>
-                                <label>Subject reason</label>
+                                <textarea id="problem_description" name="problem_description"
+                                    class="materialize-textarea notesInputsForm"></textarea>
+                                <label for="problem_description">Problem description</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <textarea id="troubleshooting" name="troubleshooting"
+                                    class="materialize-textarea notesInputsForm"></textarea>
+                                <label for="troubleshooting">Troubleshooting</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <textarea id="resolution" name="resolution"
+                                    class="materialize-textarea notesInputsForm"></textarea>
+                                <label for="resolution">Resolution</label>
                             </div>
                         </form>
                     </div>
-
-                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">Notes details
-                    </p>
-                    <form id="notes_form" name="notes_form"
-                        style="border: 1px solid black; border-radius: 10px; padding: 25px;" class="col s12">
-                        <div class="input-field col s12">
-                            <textarea id="problem_description" name="problem_description"
-                                class="materialize-textarea notesInputsForm"></textarea>
-                            <label for="problem_description">Problem description</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <textarea id="troubleshooting" name="troubleshooting"
-                                class="materialize-textarea notesInputsForm"></textarea>
-                            <label for="troubleshooting">Troubleshooting</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <textarea id="resolution" name="resolution"
-                                class="materialize-textarea notesInputsForm"></textarea>
-                            <label for="resolution">Resolution</label>
-                        </div>
-                    </form>
                 </div>
 
-                <div class="col s12 m12 l7">
-                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
-                        <span>Subject</span>
-                        <a id="copysubjectbtn" class="btn-flat right copy-btn">
-                            <i class="material-icons right">content_copy</i>Copy
-                        </a>
-                    </p>
-                    <div id="subject" class="col s12"
-                        style="padding: 10px 15px; border: 1px solid black; border-radius: 10px; margin-bottom: 40px; height: 44.1px; color: black; font-size: 16px;">
-                        Your subject will display here...</div>
+                <div class="col s6">
+                    <div class="col s12">
+                        <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
+                            <span>Subject</span>
+                            <a id="copysubjectbtn" class="btn-flat right copy-btn">
+                                <i class="material-icons right">content_copy</i>Copy
+                            </a>
+                        </p>
+                        <div id="subject" class="col s12"
+                            style="padding: 10px 15px; border: 1px solid black; border-radius: 10px; margin-bottom: 40px; height: 44.1px; color: black; font-size: 16px;">
+                            Your subject will display here...</div>
 
-                    <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
-                        <span>Notes</span>
-                        <a id="copynotesbtn" class="btn-flat right copy-btn">
-                            <i class="material-icons right">content_copy</i>Copy
-                        </a>
-                    </p>
-                    <div class="col s12"
-                        style="padding: 24px 0px 0px 0px; border: 1px solid black; border-radius: 10px;">
-                        <textarea
-                            style="border-bottom: none!important; padding: 0px 20px!important; margin: 0px!important;"
-                            id="notes" name="notes" class="materialize-textarea" readonly>
-                  {START CASE SUMMARY}
-                  |Problem Description:
-                  |Frequency of failure:
-                  |How to reproduce the failure:
-                  |Error message:
-                  |Windows Version:
-                  |BIOS Version:
-                  |Troubleshooting:
-                  |Resolution:
-                  |Leave blank:
-                  {END CASE SUMMARY}
-                            </textarea>
+                        <p style="font-size: 20px; padding-bottom: 8px; padding-left: 2px; font-weight: bold;">
+                            <span>Notes</span>
+                            <a id="copynotesbtn" class="btn-flat right copy-btn">
+                                <i class="material-icons right">content_copy</i>Copy
+                            </a>
+                        </p>
+                        <div class="col s12"
+                            style="padding: 24px 0px 0px 0px; border: 1px solid black; border-radius: 10px;">
+                            <textarea
+                                style="border-bottom: none!important; padding: 0px 20px!important; margin: 0px!important;"
+                                id="notes" name="notes" class="materialize-textarea" readonly>
+                      {START CASE SUMMARY}
+                      |Problem Description:
+                      |Frequency of failure:
+                      |How to reproduce the failure:
+                      |Error message:
+                      |Windows Version:
+                      |BIOS Version:
+                      |Troubleshooting:
+                      |Resolution:
+                      |Leave blank:
+                      {END CASE SUMMARY}
+                                </textarea>
+                        </div>
                     </div>
                 </div>
+
+
+
                 <!-- FLOATING ACTION BUTTON -->
                 <div class="fixed-action-btn">
                     <a class="btn-floating btn-large red darken-4 tooltipped clearbtn" data-position="left"
