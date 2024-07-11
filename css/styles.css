@@ -219,3 +219,47 @@ h5{
       padding-top: 24px;
   }
 }
+
+.copy-btn{
+  border-radius: 8px;
+  background-color: #414141 ;
+  color: #f5f5f5    ;
+  text-transform: capitalize;
+  line-height: 36px;
+}
+
+.copy-btn i{
+  color: #f5f5f5    ;
+}
+
+.material-tooltip{
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tabs .tab a{
+  color:#f5f5f5 ;
+  border-radius: 10px;
+  text-transform: none;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+  background-color:#00678a;
+  color:#fff  ;
+  border-radius: 10px;
+} /*Text color on hover*/
+
+.tabs .tab a:focus.active {
+  background-color:#00678a;
+  color:#fff  ;
+}
+
+.tabs .tab a.active {
+  background-color:#00678a;
+  color:#fff  ;
+  border-radius: 10px;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+  background-color:transparent;
+} /*Color of underline*/
