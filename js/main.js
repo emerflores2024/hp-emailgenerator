@@ -96,6 +96,9 @@ $(document).ready(function () {
 
     $("#copysubjectbtn").click(function () {
         var content = "AIP - " + $('#subject_reason').val();
+        if (!$('#subject_reason').val()){
+            return M.toast({ html: '<i class="material-icons left">priority_high</i>Select a reason first', classes: 'error-toast' })
+        }
         navigator.clipboard.writeText(content).then(
             M.toast({ html: '<i class="material-icons left">check</i>Subject copied to clipboard', classes: 'custom-toast' })
         );
@@ -105,6 +108,10 @@ $(document).ready(function () {
         let problem_description = $('#problem_description').val();
         let troubleshooting = $('#troubleshooting').val();
         let resolution = $('#resolution').val();
+
+        if (!problem_description || !troubleshooting || !resolution){
+            return M.toast({ html: '<i class="material-icons left">priority_high</i>All fields are required', classes: 'error-toast' })
+        }
 
         var content = "{START CASE SUMMARY}" +
         "\n|Problem Description:\n\n" +
