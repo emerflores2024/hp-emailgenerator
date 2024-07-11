@@ -112,8 +112,8 @@
             </div>
             <div id="test2" class="row">
                 <form class="row" id="form_details" autocomplete="off">
-                    <div class="col s12 l3">
-                        <div style="padding: 20px; padding-bottom: 30px;" class="col s12 card-container">
+                    <div class="col s12 l4">
+                        <div style="padding: 25px; padding-bottom: 30px;" class="col s12 card-container">
                             <h5
                                 style="padding-bottom: 20px; padding-left: 10px; color: f5f5f5; font-size: 18px; color: #eeeeee">
                                 Details</h5>
@@ -149,7 +149,7 @@
                                 <textarea id="escalation_resolution" class="materialize-textarea"></textarea>
                                 <label for="escalation_resolution">Resolution</label>
                             </div>
-                            <div style="margin-top: 20px" class="col s12 m6 offset-m3">
+                            <div style="margin-top: 20px" class="col s12">
                                 <button style="font-weight: normal;" type="submit" name="action" id="action_button"
                                     class="btn-flat custom-button">Generate
                                     <i class="material-icons right">arrow_forward</i>
@@ -158,7 +158,7 @@
 
                         </div>
                     </div>
-                    <div class="col s12 l9 email-template-container">
+                    <div class="col s12 l8 email-template-container">
                         <div class="card-container col s12">
                             <div style="padding: 15px;">
                                 <a hidden id="reset-button"
@@ -182,9 +182,9 @@
                             <input id="set_agent_name" type="text" required>
                             <label for="set_agent_name">My name</label>
                         </div>
-                        <div style="margin-top: 15px;" class="col s4 offset-s4">
+                        <div style="margin-top: 20px; display: flex;" class=" col s8 offset-s2">
                             <a href="#" id="set-name-button"
-                                style="width: 100%; font-family: Quicksand, sans-serif; font-weight: normal;"
+                                style="font-family: Quicksand, sans-serif; font-weight: normal; margin: auto;"
                                 class="btn-flat popup-button">Set my name</a>
                         </div>
                     </div>
@@ -221,5 +221,4 @@
         const analytics = getAnalytics(app);
     </script>
 </body>
-
 </html>

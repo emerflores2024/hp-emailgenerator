@@ -130,83 +130,11 @@ $(document).ready(function () {
     $(".clearbtn").click(function () {
         $('#subject_form')[0].reset();
         $('#notes_form')[0].reset();
-        $('#notes').val(
-            "{START CASE SUMMARY}" +
-            "\n|Problem Description:" +
-            "\n|Frequency of failure:" +
-            "\n|How to reproduce the failure:" +
-            "\n|Error message:" +
-            "\n|Windows Version:" +
-            "\n|BIOS Version:" +
-            "\n|Troubleshooting:" +
-            "\n|Resolution:" +
-            "\n|Leave blank:" +
-            "\n{END CASE SUMMARY}" +
-            "\n"
-        );
-
         $(".notesInputsForm").val('');
 
         M.textareaAutoResize($('#notes'));
         M.textareaAutoResize($('.notesInputsForm'));
 
         $(".notesInputsForm").css({ height: "0px" });
-    });
-
-    // FUNCTION TO CHECK IF SELECT INPUTS CHANGE AND BUILD SUBJECT
-    $('.subjectInputsForm').on('change', function () {
-        let subject_reason = $('#subject_reason').val();
-
-        if (!subject_reason) { subject_reason = "" };
-
-        if (!subject_reason) {
-            $('#subject').text("Your subject will display here...");
-        } else {
-            $('#subject').text("AIP - " + subject_reason);
-        };
-    });
-
-    // FUNCTION TO CHECK IF TEXTAREA INPUTS CHANGE AND BUILD NOTES
-    $('.notesInputsForm').on('change', function () {
-        let problem_description = $('#problem_description').val();
-        let troubleshooting = $('#troubleshooting').val();
-        let resolution = $('#resolution').val();
-
-        if (problem_description != "") {
-            problem_description = "\n\n" + problem_description + "\n";
-        } else {
-            problem_description = "";
-        };
-
-        if (troubleshooting != "") {
-            troubleshooting = "\n\n" + troubleshooting + "\n";
-        } else {
-            troubleshooting = "";
-        };
-
-        if (resolution != "") {
-            resolution = "\n\n" + resolution + "\n";
-        } else {
-            resolution = "";
-        };
-
-        $('#notes').val(
-            "{START CASE SUMMARY}" +
-            "\n|Problem Description:" +
-            problem_description +
-            "\n|Frequency of failure:" +
-            "\n|How to reproduce the failure:" +
-            "\n|Error message:" +
-            "\n|Windows Version:" +
-            "\n|BIOS Version:" +
-            "\n|Troubleshooting:" +
-            troubleshooting +
-            "\n|Resolution:" +
-            resolution +
-            "\n|Leave blank:" +
-            "\n{END CASE SUMMARY}" +
-            "\n"
-        );
-        M.textareaAutoResize($('#notes'));
     });
 });
