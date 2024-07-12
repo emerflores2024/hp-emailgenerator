@@ -197,5 +197,28 @@
     </footer>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDzg0bqKmTmz-VLy35rzOlqVXkz3bi1_oM",
+          authDomain: "hp-aip-tools.firebaseapp.com",
+          projectId: "hp-aip-tools",
+          storageBucket: "hp-aip-tools.appspot.com",
+          messagingSenderId: "1069255708301",
+          appId: "1:1069255708301:web:f91d60dbda2d691e6e9cc4",
+          measurementId: "G-6XS932PFV3"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
 </body>
 </html>
